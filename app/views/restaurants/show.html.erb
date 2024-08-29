@@ -1,0 +1,24 @@
+<div class="container mt-5">
+<div class="row justify-content-between">
+  <div class="card col-3 m-5">
+    <div class="card-body">
+      <h5 class="card-title"><%= @restaurant.name %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= @restaurant.category %></h6>
+      <p class="card-text"><%= @restaurant.address %></p>
+      <p class="card-text"><%= @restaurant.phone_number %></p>
+      <%= link_to "Add review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+      <%= link_to "Return to list", restaurants_path, class: "btn btn-secondary" %>
+    </div>
+  </div>
+    <%# <%= link_to "Add Review", new_restaurant_review_path(@restaurant, @review), class: "btn btn-primary" %>
+    <div class="card col-9 flex-grow-1 m-5" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+    <% @reviews.each do |review| %>
+      <li class="list-group-item d-flex justify-content-end"><span class="flex-grow-1"><em>"<%= review.content %>"</em>
+      </span><span class="badge bg-secondary">Rating: <%= review.rating %>/5</span></li>
+      <% end %>
+      </ul>
+    </div>
+
+  </div>
+</div>

@@ -5,7 +5,6 @@
     <% @restaurants.each do |restaurant|%>
     <li class="list-group-item">
         <%= link_to restaurant.name, restaurant_path(restaurant), class: "text-decoration-none"%>
-        <%= @reviews %>
     </li>
     <% end %>
   </ul>

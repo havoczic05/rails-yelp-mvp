@@ -1,6 +1,8 @@
   <%= simple_form_for [@restaurant, @review] do |f| %>
   <%= f.input :rating, collection: %w[1 2 3 4 5] %>
   <%= f.input :content %>
-  <%= f.button :submit, class: "btn btn-primary" %>
-  <%= link_to "Return to list", restaurants_path, class: "btn btn-secondary"%>
+  <div class="d-flex justify-content-center">
+  <%= f.button :submit, class: "btn btn-primary mx-3" %>
+  <%= link_to "Return to list", restaurants_path, class: "btn btn-secondary mx-3"%>
+  </div>
 <% end %>

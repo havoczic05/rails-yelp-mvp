@@ -3,6 +3,8 @@
   <%= f.input :address %>
   <%= f.input :phone_number %>
   <%= f.input :category, collection: %w[chinese italian japanese french belgian] %>
-  <%= f.button :submit, class: "btn btn-primary" %>
-  <%= link_to "Restaurant List", restaurants_path, class: "btn btn-secondary"%>
+  <div class="d-flex justify-content-center">
+    <%= f.button :submit, class: "btn btn-primary mx-3" %>
+    <%= link_to "Restaurant List", restaurants_path, class: "btn btn-secondary mx-3"%>
+  </div>
 <% end %>

@@ -1,17 +1,20 @@
-<div class="container mt-5">
+<div class="container mt-5 p-5">
+<h1 class="text-center">Restaurant details</h1>
 <div class="row justify-content-between">
-  <div class="card col-3 m-5">
+  <div class="card col-4 my-5 mx-2">
     <div class="card-body">
-      <h5 class="card-title"><%= @restaurant.name %></h5>
-      <h6 class="card-subtitle mb-2 text-muted"><%= @restaurant.category %></h6>
-      <p class="card-text"><%= @restaurant.address %></p>
+      <h4 class="card-title text-center"><%= @restaurant.name %></h5>
+      <h6 class="card-subtitle my-3 text-muted text-center"><%= @restaurant.category %> food</h6>
+      <p class="card-text"><em><%= @restaurant.address %></em></p>
       <p class="card-text"><%= @restaurant.phone_number %></p>
-      <%= link_to "Add review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
-      <%= link_to "Return to list", restaurants_path, class: "btn btn-secondary" %>
+      <div class="d-flex justify-content-center">
+      <%= link_to "Add review", new_restaurant_review_path(@restaurant), class: "btn btn-primary mx-1" %>
+      <%= link_to "Return to list", restaurants_path, class: "btn btn-secondary mx-1" %>
+      </div>
     </div>
   </div>
     <%# <%= link_to "Add Review", new_restaurant_review_path(@restaurant, @review), class: "btn btn-primary" %>
-    <div class="card col-9 flex-grow-1 m-5" style="width: 18rem;">
+    <div class="card col-8 flex-grow-1 my-5 mx-2" style="width: 18rem;">
     <ul class="list-group list-group-flush">
     <% @reviews.each do |review| %>
       <li class="list-group-item d-flex justify-content-end"><span class="flex-grow-1"><em>"<%= review.content %>"</em>
